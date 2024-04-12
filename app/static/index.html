@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Prediction</title>
+    <style>
+        body {
+            font-family: 'Ubuntu Mono Nerd Font', monospace;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+            margin-top: 0; /* Remove default margin */
+            margin-bottom: 30px; /* Increased margin bottom */
+        }
+
+        form {
+            margin-top: 20px;
+            text-align: center; /* Center align the input fields */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555555;
+            font-size: 20px; /* Increased font size for labels */
+        }
+
+        input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px 0; /* Adjusted padding */
+            margin-bottom: 20px;
+            border: none; /* Removed border */
+            background-color: transparent; /* Transparent background */
+            font-size: 16px;
+            -moz-appearance: textfield;
+            appearance: textfield;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3); /* Lighter underline */
+            text-align: center; /* Center align text */
+        }
+
+        input[type="number"]:focus {
+            outline: none; /* Remove the default focus outline */
+            border-bottom: 1px solid #555; /* Darker underline when focused */
+        }
+
+        input[type="number"]::placeholder {
+            text-align: center; /* Center align placeholder text */
+        }
+
+        input[type="number"]:not(:placeholder-shown) {
+            border-bottom: none; /* Remove underline when input is not empty */
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: #ffffff;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 20px; /* Increased font size */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #007bff;
+            font-size: 21px; /* Increased font size */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Performance Prediction</h1>
+
+        <form action="/submitform" method="post" enctype="multipart/form-data">
+            <label for="HoursStudied">Hours Studied:</label>
+            <input type="number" name="HoursStudied" required placeholder="Type here">
+            <label for="SampleQuestionPapersPracticed">Sample Question Papers Practiced:</label>
+            <input type="number" name="SampleQuestionPapersPracticed" required placeholder="Type here">
+            <label for="PreviousScores">Previous Scores:</label>
+            <input type="number" name="PreviousScores" required placeholder="Type here">
+            <label for="ExtracurricularActivities">Extracurricular Activities:</label>
+            <input type="number" name="ExtracurricularActivities" required placeholder="Type here">
+            <label for="SleepHours">Sleep Hours:</label>
+            <input type="number" name="SleepHours" required placeholder="Type here">
+            <input type="submit" name="predict" value="Predict!">
+        </form>
+        <p>Predicted Performance Index: {{ prediction }}</p>
+    </div>
+</body>
+</html>
