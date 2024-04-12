@@ -14,4 +14,4 @@ use docker to containerize the project by building an image and running the cont
 ├── readme.txt
 └── requirements.txt
 use render.com to deploy the docker container in the cload by pushing the project to github and deploy from github
-now the web service is live!
+now the web service is live at https://studentperformanceprediction.onrender.com
